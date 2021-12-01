@@ -9,7 +9,7 @@
         }
     ],
     "require": {
-        "php": "~7.4",
+        "php": "^7.4|^8",
         "symfony/console": "^5",
         "symfony/yaml": "^5",
         "symfony/finder": "^5.3"
