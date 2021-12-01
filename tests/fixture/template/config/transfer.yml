@@ -1,0 +1,11 @@
+$:
+  config:
+    namespace: %vendor%\Shared\Transfer\%name%
+    namespaceRoot: %namespaceRoot%
+    outputPath: src/
+
+%name%:
+  %name%Transfer:
+     property: [
+       {name: example, default: "Lorem Ipsum %name%"}
+     ]

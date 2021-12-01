@@ -1,0 +1,11 @@
+#!/usr/bin/env php
+<?php
+
+require_once getcwd().'/vendor/autoload.php';
+
+use Symfony\Component\Console\Application;
+
+$console = new Application('everon-packager', \Everon\PackageGenerator\PackagerDefinitionInterface::VERSION);
+$console->add(new \Everon\PackageGenerator\Command\GenerateCommand());
+
+$console->run();

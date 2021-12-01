@@ -1,0 +1,23 @@
+$:
+  config:
+    namespace: Everon\PackageGenerator\Configurator
+    namespaceRoot: Everon\PackageGenerator\
+  default:
+    outputPath: src/
+
+Packager:
+  SchemaScopeConfigurator:
+    property: [
+      {name: name}
+      {name: packageName}
+      {name: namespace}
+      {name: namespaceRoot}
+      {name: vendor}
+      {name: vendorName}
+      {name: system}
+      {name: systemName}
+      {name: outputPath}
+      {name: composerDescription}
+      {name: composerType}
+      {name: composerLicense}
+    ]}}

@@ -1,0 +1,39 @@
+{
+  "name": "%vendorName%/%systemName%-%packageName%",
+  "description": "%composerDescription%",
+  "type": "%composerType%",
+  "license": "%composerLicense%",
+  "require": {
+    "php": "~7.4"
+  },
+  "require-dev": {
+    "symfony/var-dumper": "^5",
+    "phpunit/phpunit": "^9",
+    "popo/generator": "^5"
+  },
+  "autoload": {
+    "psr-4": {
+      "%vendor%\\": "src/"
+    }
+  },
+  "autoload-dev": {
+    "psr-4": {
+      "Test%vendor%\\": "tests/suite/",
+      "TestStub%name%\\": "tests/stub/"
+    }
+  },
+  "scripts": {
+    "post-autoload-dump": [
+      "@popo"
+    ],
+    "test": [
+      "vendor/bin/phpunit --no-coverage --testdox --group unit,functional"
+    ],
+    "test-c": [
+      "vendor/bin/phpunit --testdox --group unit,functional"
+    ],
+    "popo": [
+      "vendor/bin/popo generate -s ./,package/,vendor/xentral-system -p config/schema/transfer/ -m '*.transfer.yml' -o src --php74CompatibleOutput 1 --ignoreNonExistingSchemaFolder 1"
+    ]
+  }
+}

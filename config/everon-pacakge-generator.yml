@@ -1,0 +1,24 @@
+Packager:
+  PackagerConfigurator:
+    property: [
+      {name: schemaFilename}
+      {name: outputPath}
+      {name: schema, type: popo, default: SchemaConfigurator::class}
+      {name: shouldOverwriteExistingFiles, type: bool, default: false, comment: Set to true to overwrite existing files}
+    ]}}
+
+  SchemaConfigurator:
+    property: [
+      {name: filename}
+      {name: scope, type: popo, default: SchemaScopeConfigurator::class}
+      {name: schemaData, type: array, default: []}
+      {name: resourceData, type: array, default: []}
+    ]}}
+
+  GenerateResult:
+    property: [
+      {name: resourceName}
+      {name: path}
+      {name: type, default: \Everon\PackageGenerator\PackagerDefinitionInterface::CONFIGURATION_SCHEMA_RESOURCE_TYPE_FILE}
+      {name: wasGenerated, type: bool, default: false}
+    ]}}

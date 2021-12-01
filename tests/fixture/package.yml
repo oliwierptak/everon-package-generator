@@ -1,0 +1,64 @@
+$:
+  name: Foo
+  packageName: foo
+  namespace: ExampleSystem\App\Foo
+  namespaceRoot: ExampleSystem\
+  vendor: ExampleSystem
+  vendorName: example
+  system: App
+  systemName: app
+  composerDescription: Lorem ipsum
+  composerType: library
+  composerLicense: MIT
+
+config:
+  resource: [
+    {
+      location: composer.json,
+      content: tests/fixture/template/config/composer.json
+    },
+    {
+      location: bootstrap.php,
+      content: tests/fixture/template/config/bootstrap.php
+    },
+    {
+      location: config/schema/transfer/%packageName%.transfer.yml,
+      content: tests/fixture/template/config/transfer.yml
+    },
+    {
+      location: src/%system%/%name%/%name%DefinitionInterface.php,
+      content: tests/fixture/template/config/DefinitionInterface.php
+    }
+  ]}}
+
+business:
+  resource: [
+    {
+      location: src/%system%/%name%/Business/%name%Facade.php,
+      content: tests/fixture/template/business/BusinessFacade.php
+    }
+    {
+      location: src/%system%/%name%/Business/%name%BusinessFactory.php,
+      content: tests/fixture/template/business/BusinessFactory.php
+    },
+    {
+      location: src/%system%/%name%/Business/Model/%name%Model.php,
+      content: tests/fixture/template/business/Model/ExampleModel.php
+    }
+  ]}}
+
+test:
+  resource: [
+    {
+      location: tests/suite/%system%/%name%/Business/%name%FacadeTest.php,
+      content: tests/fixture/template/test/BusinessFacadeTest.php
+    }
+    {
+      location: tests/bootstrap.php,
+      content: tests/fixture/template/test/bootstrap.php
+    },
+    {
+      location: phpunit.xml.dist,
+      content: tests/fixture/template/test/phpunit.xml.dist
+    }
+  ]}}

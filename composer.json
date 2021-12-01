@@ -1,0 +1,48 @@
+{
+    "name": "everon/package-generator",
+    "description": "Everon Package Generator. Generate (package) files based on schema",
+    "type": "library",
+    "license": "MIT",
+    "require": {
+        "php": "~7.4",
+        "symfony/console": "^5",
+        "symfony/yaml": "^5",
+        "symfony/finder": "^5.3"
+    },
+    "require-dev": {
+        "symfony/var-dumper": "^5",
+        "phpunit/phpunit": "^9",
+        "popo/generator": "^5.6"
+    },
+    "autoload": {
+        "psr-4": {
+            "Everon\\PackageGenerator\\": "src"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "TestEveron\\PackageGenerator\\": "tests/suite"
+        }
+    },
+    "scripts": {
+        "post-autoload-dump": [
+            "chmod +x bin/everon-packager",
+            "@popo"
+        ],
+        "test": [
+            "vendor/bin/phpunit --no-coverage --testdox --group unit,functional"
+        ],
+        "test-c": [
+            "vendor/bin/phpunit --testdox --group unit,functional"
+        ],
+        "popo": [
+            "vendor/bin/popo generate -c config/everon-pacakge-generator-config.yml -s config/everon-pacakge-generator.yml,config/package-scope.yml -o src --php74CompatibleOutput 1"
+        ]
+    },
+    "scripts-descriptions": {
+        "everon-packager": "Generate package files based on schema"
+    },
+    "bin": [
+        "bin/everon-packager"
+    ]
+}

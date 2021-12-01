@@ -1,0 +1,33 @@
+<?xml version="1.0"?>
+<phpunit xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" backupGlobals="false" backupStaticAttributes="false"
+         colors="true" convertErrorsToExceptions="true" convertNoticesToExceptions="true"
+         convertWarningsToExceptions="true" processIsolation="false" stopOnFailure="true" stopOnError="true"
+         stopOnIncomplete="false" stopOnSkipped="false" bootstrap="tests/bootstrap.php"
+         xsi:noNamespaceSchemaLocation="https://schema.phpunit.de/9.3/phpunit.xsd">
+    <testsuites>
+        <testsuite name="TestSuite">
+            <directory>./tests/suite/</directory>
+        </testsuite>
+    </testsuites>
+    <coverage cacheDirectory="./tests/logs/cache/"
+              includeUncoveredFiles="true"
+              processUncoveredFiles="true"
+              pathCoverage="false"
+              ignoreDeprecatedCodeUnits="true"
+              disableCodeCoverageIgnore="true">
+        <include>
+            <directory suffix=".php">./src/</directory>
+        </include>
+        <exclude>
+            <directory suffix=".php">vendor</directory>
+            <directory suffix=".php">config</directory>
+        </exclude>
+        <report>
+            <clover outputFile="./tests/logs/coverage.xml"/>
+            <html outputDirectory="./tests/logs/coverage" lowUpperBound="50" highLowerBound="80"/>
+        </report>
+    </coverage>
+    <php>
+        <ini name="error_reporting" value="E_ALL"/>
+    </php>
+</phpunit>
