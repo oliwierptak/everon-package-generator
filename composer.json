@@ -3,6 +3,11 @@
     "description": "Everon Package Generator. Generate (package) files based on schema",
     "type": "library",
     "license": "MIT",
+    "authors": [
+        {
+            "name": "Oliwier Ptak"
+        }
+    ],
     "require": {
         "php": "~7.4",
         "symfony/console": "^5",
