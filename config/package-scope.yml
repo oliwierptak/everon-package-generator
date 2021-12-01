@@ -1,4 +1,4 @@
-Packager:
+EveronPackageGenerator:
   SchemaScopeConfigurator:
     property: [
       {name: name}

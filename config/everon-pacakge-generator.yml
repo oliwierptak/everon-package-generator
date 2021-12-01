@@ -1,4 +1,4 @@
-Packager:
+EveronPackageGenerator:
   PackagerConfigurator:
     property: [
       {name: schemaFilename}
