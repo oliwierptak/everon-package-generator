@@ -35,7 +35,7 @@ class SchemaLoader
             ->requireSchema()
             ->setFilename($configurationFile->getPathname())
             ->setSchemaData($data)
-            ->requireScope()->fromArray(
+            ->requireScope()->setData(
                 $this->generateScopeValues($config, $transfer)
             );
 
@@ -79,7 +79,7 @@ class SchemaLoader
     {
         return array_merge(
             array_filter($fileConfig),
-            array_filter($transfer->requireSchema()->requireScope()->toArray())
+            array_filter($transfer->requireSchema()->requireScope()->getData())
         );
     }
 }

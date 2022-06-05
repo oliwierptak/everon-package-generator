@@ -40,6 +40,7 @@ class SchemaGenerator
                     $item,
                     $resource,
                     $configurator->requireSchema()->requireScope(),
+                    $configurator->requireOutputPath(),
                     $configurator->shouldOverwriteExistingFiles()
                 );
 
@@ -54,9 +55,10 @@ class SchemaGenerator
         GenerateResult $item,
         Resource $resource,
         SchemaScopeConfigurator $scope,
+        string $outputPath,
         bool $overwriteExistingFiles
     ): GenerateResult {
-        $path = $this->generatePath($resource, $scope);
+        $path = $this->generatePath($resource, $scope, $outputPath);
         $item->setPath($path);
 
         if ($resource->isDir()) {
@@ -88,11 +90,11 @@ class SchemaGenerator
         return $item;
     }
 
-    protected function generatePath(Resource $resource, SchemaScopeConfigurator $configurator): string
+    protected function generatePath(Resource $resource, SchemaScopeConfigurator $configurator, string $outputPath): string
     {
         return sprintf(
             '%s/%s',
-            $configurator->requireOutputPath(),
+            $outputPath,
             $resource->getLocation()
         );
     }

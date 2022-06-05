@@ -47,9 +47,7 @@ class SchemaBuilder
     ): PackagerConfigurator {
         $transfer
             ->requireSchema()
-            ->setResourceData($resources)
-            ->requireScope()
-            ->setOutputPath($transfer->getOutputPath());
+            ->setResourceData($resources);
 
         return $transfer;
     }

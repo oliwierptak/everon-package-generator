@@ -41,7 +41,7 @@
             "vendor/bin/phpunit --testdox --group unit,functional"
         ],
         "popo": [
-            "vendor/bin/popo generate -c config/everon-pacakge-generator-config.yml -s config/everon-pacakge-generator.yml,config/package-scope.yml -o src --php74CompatibleOutput 1"
+            "vendor/bin/popo generate -s config/popo.yml -o src"
         ]
     },
     "scripts-descriptions": {

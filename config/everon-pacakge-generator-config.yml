@@ -1,6 +1,0 @@
-$:
-  config:
-    namespace: Everon\PackageGenerator\Configurator
-    namespaceRoot: Everon\PackageGenerator\
-  default:
-    outputPath: src/

@@ -1,3 +1,10 @@
+$:
+  config:
+    namespace: Everon\PackageGenerator\Configurator
+    namespaceRoot: Everon\PackageGenerator\
+  default:
+    outputPath: src/
+
 EveronPackageGenerator:
   PackagerConfigurator:
     property: [
@@ -21,4 +28,9 @@ EveronPackageGenerator:
       {name: path}
       {name: type, default: \Everon\PackageGenerator\PackagerDefinitionInterface::CONFIGURATION_SCHEMA_RESOURCE_TYPE_FILE}
       {name: wasGenerated, type: bool, default: false}
+    ]}}
+
+  SchemaScopeConfigurator:
+    property: [
+      {name: data, type: array}
     ]}}
